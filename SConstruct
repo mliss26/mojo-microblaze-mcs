@@ -31,6 +31,7 @@ env.Append(BUILDERS = {
 
 # add method to build and run testbenches
 def iverilog_testbench(env, target, source):
+
     bench = env.IVerilogSimulation(target, source)
     waves = env.IVerilogWaves(target, bench)
 
@@ -45,6 +46,9 @@ env.AddMethod(iverilog_testbench, 'IVerilogTestBench')
 # TODO write scanner/emmitter to find verilog files required for instantated modules
 
 # invoke subsidiary scripts to collect all testbenches
-env.SConscript(variant_dir='testbench', duplicate=0, dirs=[
+subdirs = [
     'src/util',
-])
+    'src/mbiobus',
+]
+for subdir in subdirs:
+    env.SConscript(dirs=subdir, variant_dir='testbench/'+subdir, duplicate=0)

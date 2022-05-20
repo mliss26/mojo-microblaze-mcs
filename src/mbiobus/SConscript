@@ -1,0 +1,17 @@
+#
+# MicroBlaze IO bus testbenches
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+
+env.IVerilogTestBench('iobus_address_compare_tb',
+        [ 'bench/iobus_address_compare_tb.v', 'iobus_address_compare.v'])
+
+env.IVerilogTestBench('iobus_default_response_tb',
+        [ 'bench/iobus_default_response_tb.v', 'iobus_default_response.v'])
+
+env.IVerilogTestBench('iobus_output_mux_tb',
+        [ 'bench/iobus_output_mux_tb.v', 'iobus_output_mux.v'])
