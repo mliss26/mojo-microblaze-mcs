@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri May 20 22:38:11 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/peripherals/pdm/pdm_tb.vcd"
+[dumpfile_mtime] "Fri May 20 22:34:36 2022"
+[dumpfile_size] 57852
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/pdm_tb.gtkw"
+[timestart] 22697000
+[size] 1920 1160
+[pos] -1 -1
+*-18.779232 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 319
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 322
+@29
+pdm_tb.rst
+@28
+pdm_tb.clk
+@22
+pdm_tb.duty[7:0]
+@28
+pdm_tb.en
+pdm_tb.pdm
+[pattern_trace] 1
+[pattern_trace] 0

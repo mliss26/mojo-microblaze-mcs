@@ -1,0 +1,19 @@
+#
+# Pulse Density Modulation IO module
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+
+env.IVerilogTestBench('pdm_tb',
+        [ 'bench/pdm_tb.v', 'pdm.v'])
+
+env.IVerilogTestBench('pdm_iom_tb', [
+        'bench/pdm_iom_tb.v',
+        'pdm_iom.v',
+        'pdm.v',
+        '../../mbiobus/bench/iobus_master_model.v'
+])
+

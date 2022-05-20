@@ -8,6 +8,8 @@
 `define PRNG_SEED_OFFS          0
 `define PRNG_RAND_OFFS          4
 
+`timescale 1ns/10ps
+
 module prng_iom_tb();
 
     reg clk, rst;
