@@ -1,0 +1,41 @@
+#
+# SDRAM Controller IO Module
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+
+script_dir = Dir('.').srcnode().abspath
+
+env.Append(VINCLUDES = '-I'+script_dir)
+
+env.IVerilogTestBench('sdram_tb', [
+        'bench/sdram_tb.v',
+        'bench/mt48lc32m8a2.v',
+        'sdram.v',
+        'ram_test.v',
+        '../../peripherals/prng/prng.v',
+        '$ISE_PATH/verilog/src/glbl.v',
+        '$ISE_PATH/verilog/src/unisims/IODELAY2.v',
+        '$ISE_PATH/verilog/src/unisims/ODDR2.v',
+])
+
+env.IVerilogTestBench('sdram_iom_tb', [
+        'bench/sdram_iom_tb.v',
+        'bench/sdram_test_iobus.v',
+        'bench/mt48lc32m8a2.v',
+        'sdram_iom.v',
+        'sdram.v',
+        '../../mbiobus/iobus_address_compare.v',
+        '../../mbiobus/iobus_default_response.v',
+        '../../mbiobus/iobus_output_mux.v',
+        '../../mbiobus/bench/iobus_master_model.v',
+        '../../peripherals/prng/prng.v',
+        '../../peripherals/prng/prng_iom.v',
+        '../../util/async_handshake.v',
+        '$ISE_PATH/verilog/src/glbl.v',
+        '$ISE_PATH/verilog/src/unisims/IODELAY2.v',
+        '$ISE_PATH/verilog/src/unisims/ODDR2.v',
+])

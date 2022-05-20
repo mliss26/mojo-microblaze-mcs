@@ -48,6 +48,7 @@ env.AddMethod(iverilog_testbench, 'IVerilogTestBench')
 # invoke subsidiary scripts to collect all testbenches
 subdirs = [
     'src/mbiobus',
+    'src/memory/sdram',
     'src/peripherals/gcnt',
     'src/peripherals/pdm',
     'src/peripherals/prng',

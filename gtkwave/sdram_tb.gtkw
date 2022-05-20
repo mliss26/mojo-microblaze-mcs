@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sun May 15 17:47:36 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/memory/sdram/sdram_tb.vcd"
+[dumpfile_mtime] "Sun May 15 17:46:50 2022"
+[dumpfile_size] 4416529
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/sdram_tb.gtkw"
+[timestart] 104608600
+[size] 1233 760
+[pos] -1 -1
+*-15.059294 104666000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 307
+[signals_width] 201
+[sst_expanded] 1
+[sst_vpaned_height] 254
+@28
+sdram_tb.rst
+sdram_tb.clk
+sdram_tb.sdram_clk
+sdram_tb.sdram_cle
+@800023
+#{sdram_cmd} sdram_tb.sdram_cs sdram_tb.sdram_ras sdram_tb.sdram_cas sdram_tb.sdram_we
+@1001201
+-group_end
+@28
+sdram_tb.sdram_ba[1:0]
+@22
+sdram_tb.sdram_a[12:0]
+sdram_tb.sdram_dq[7:0]
+@28
+sdram_tb.sdram_dqm
+@22
+sdram_tb.addr[22:0]
+@28
+sdram_tb.rw
+@22
+sdram_tb.data_in[31:0]
+@28
+sdram_tb.in_valid
+@22
+sdram_tb.data_out[31:0]
+@28
+sdram_tb.out_valid
+sdram_tb.busy
+@22
+sdram_tb.leds[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sun May 15 17:59:43 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/memory/sdram/sdram_iom_tb.vcd"
+[dumpfile_mtime] "Sun May 15 17:58:18 2022"
+[dumpfile_size] 38021455
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/sdram_iom_tb.gtkw"
+[timestart] 205867600
+[size] 1233 760
+[pos] 1 697
+*-16.140787 205980000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] sdram_iom_tb.
+[treeopen] sdram_iom_tb.DUT.
+[treeopen] sdram_iom_tb.DUT.sdram_module.
+[sst_width] 307
+[signals_width] 251
+[sst_expanded] 1
+[sst_vpaned_height] 412
+@28
+sdram_iom_tb.rst
+sdram_iom_tb.io_clk
+sdram_iom_tb.mc_clk
+sdram_iom_tb.sdram_clk
+sdram_iom_tb.sdram_cle
+@800022
+#{sdram_cmd} sdram_iom_tb.sdram_cs sdram_iom_tb.sdram_ras sdram_iom_tb.sdram_cas sdram_iom_tb.sdram_we
+@1001200
+-group_end
+@28
+sdram_iom_tb.sdram_ba[1:0]
+@22
+sdram_iom_tb.sdram_a[12:0]
+sdram_iom_tb.sdram_dq[7:0]
+@28
+sdram_iom_tb.sdram_dqm
+sdram_iom_tb.io_addr_strobe
+sdram_iom_tb.io_read_strobe
+sdram_iom_tb.io_write_strobe
+@22
+sdram_iom_tb.io_addr[31:0]
+sdram_iom_tb.io_write_data[31:0]
+sdram_iom_tb.io_read_data[31:0]
+@28
+sdram_iom_tb.io_ready
+@420
+sdram_iom_tb.err_count
+@22
+sdram_iom_tb.ram_addr[31:0]
+sdram_iom_tb.value_wr[31:0]
+sdram_iom_tb.value_rd[31:0]
+@28
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.valid_src
+@22
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.data_src[31:0]
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.data_src_r[31:0]
+@28
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.valid_dst
+@22
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.data_dst[31:0]
+@28
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.ready_dst
+sdram_iom_tb.DUT.sdram_module.mc_io_cbc.ready_src
+[pattern_trace] 1
+[pattern_trace] 0
