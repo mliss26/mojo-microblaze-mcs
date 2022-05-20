@@ -47,8 +47,9 @@ env.AddMethod(iverilog_testbench, 'IVerilogTestBench')
 
 # invoke subsidiary scripts to collect all testbenches
 subdirs = [
-    'src/util',
     'src/mbiobus',
+    'src/peripherals/prng',
+    'src/util',
 ]
 for subdir in subdirs:
     env.SConscript(dirs=subdir, variant_dir='testbench/'+subdir, duplicate=0)

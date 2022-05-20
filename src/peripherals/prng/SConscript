@@ -1,0 +1,33 @@
+#
+# PRNG IO module
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+
+#
+# PRNG testbench
+#
+env.IVerilogTestBench('prng_tb',
+        [ 'bench/prng_tb.v', 'prng.v'])
+
+# get dir of current SConscript to find histogram script
+script_dir = Dir('.').srcnode().abspath
+
+# generate histogram of the PRNG output values
+png = 'prng_tb_histogram.png'
+env.Command(png, 'prng_tb.vvp.out', script_dir+'/bench/prng_histogram.py $SOURCE $TARGET')
+env.Alias('test', png)
+
+#
+# PRNG IO module testbench
+#
+env.IVerilogTestBench('prng_iom_tb', [
+        'bench/prng_iom_tb.v',
+        'prng_iom.v',
+        'prng.v',
+        '../../mbiobus/bench/iobus_master_model.v'
+])
+

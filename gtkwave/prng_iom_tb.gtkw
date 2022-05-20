@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Tue May 10 20:23:20 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/peripherals/prng/prng_iom_tb.vcd"
+[dumpfile_mtime] "Tue May 10 20:21:35 2022"
+[dumpfile_size] 3945
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/prng_iom_tb.gtkw"
+[timestart] 0
+[size] 1920 1160
+[pos] -1 -1
+*-7.239466 951 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 319
+[signals_width] 284
+[sst_expanded] 1
+[sst_vpaned_height] 322
+@28
+prng_iom_tb.rst
+prng_iom_tb.clk
+prng_iom_tb.io_addr_strobe
+prng_iom_tb.io_read_strobe
+prng_iom_tb.io_write_strobe
+@22
+prng_iom_tb.io_addr[31:0]
+prng_iom_tb.io_byte_en[3:0]
+prng_iom_tb.io_write_data[31:0]
+prng_iom_tb.io_read_data[31:0]
+@28
+prng_iom_tb.io_ready
+@23
+prng_iom_tb.value[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
