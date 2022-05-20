@@ -1,0 +1,12 @@
+#
+# Verilog utility testbenches
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+
+env.IVerilogTestBench('async_handshake_tb', [ 'async_handshake_tb.v', 'async_handshake.v'])
+env.IVerilogTestBench('counter_tb', [ 'counter_tb.v', 'counter.v'])
+env.IVerilogTestBench('reset_synchronizer_tb', [ 'reset_synchronizer_tb.v', 'reset_synchronizer.v'])

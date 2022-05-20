@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri May 20 19:15:28 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/reset_synchronizer_tb.vcd"
+[dumpfile_mtime] "Fri May 20 19:15:23 2022"
+[dumpfile_size] 2566
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/reset_synchronizer_tb.gtkw"
+[timestart] 0
+[size] 1918 1118
+[pos] 0 697
+*-17.384481 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 319
+[signals_width] 151
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+reset_synchronizer_tb.clk
+@420
+reset_synchronizer_tb.i
+@28
+reset_synchronizer_tb.rst
+@29
+reset_synchronizer_tb.rst_out
+[pattern_trace] 1
+[pattern_trace] 0

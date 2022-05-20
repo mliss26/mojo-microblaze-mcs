@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri May 20 18:46:29 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/async_handshake_tb.vcd"
+[dumpfile_mtime] "Fri May 20 18:41:43 2022"
+[dumpfile_size] 1924
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/async_handshake_tb.gtkw"
+[timestart] 0
+[size] 1920 1160
+[pos] -3 616
+*-14.978488 150000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] async_handshake_tb.
+[sst_width] 319
+[signals_width] 243
+[sst_expanded] 1
+[sst_vpaned_height] 322
+@28
+async_handshake_tb.rst
+[color] 3
+async_handshake_tb.clk_src
+@22
+[color] 3
+async_handshake_tb.data_src[7:0]
+@28
+[color] 3
+async_handshake_tb.valid_src
+[color] 3
+async_handshake_tb.ready_src
+@29
+async_handshake_tb.clk_dst
+@22
+async_handshake_tb.data_dst[7:0]
+@28
+async_handshake_tb.valid_dst
+async_handshake_tb.ready_dst
+[pattern_trace] 1
+[pattern_trace] 0
