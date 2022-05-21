@@ -6,7 +6,11 @@
 #
 import os
 
-env = Environment(ENV = {'PATH': os.environ['PATH']})
+env = Environment(ENV = {
+    'PATH': os.environ['PATH'],
+    'DISPLAY': os.environ['DISPLAY'],
+    'HOME': os.environ['HOME'],
+})
 Export('env')
 
 # find ISE and add path to env for testbenches
@@ -56,3 +60,7 @@ subdirs = [
 ]
 for subdir in subdirs:
     env.SConscript(dirs=subdir, variant_dir='testbench/'+subdir, duplicate=0)
+
+# core generator support
+env.Alias('coregen', [], 'coregen -p ipcore_dir/coregen.cgp')
+env.AlwaysBuild('coregen')
