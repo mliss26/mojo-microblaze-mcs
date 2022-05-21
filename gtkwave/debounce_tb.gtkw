@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sat May 21 06:34:56 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/util/debounce_tb.vcd"
+[dumpfile_mtime] "Sat May 21 06:34:07 2022"
+[dumpfile_size] 472266
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/debounce_tb.gtkw"
+[timestart] 23383000
+[size] 1196 898
+[pos] 0 -1
+*-20.826540 26107000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 319
+[signals_width] 173
+[sst_expanded] 1
+[sst_vpaned_height] 231
+@28
+debounce_tb.clk
+@420
+debounce_tb.count
+@28
+debounce_tb.btn
+@29
+debounce_tb.out
+@420
+debounce_tb.err_count
+[pattern_trace] 1
+[pattern_trace] 0
