@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sat May 21 00:20:34 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/mbiobus/iobus_top_tb.vcd"
+[dumpfile_mtime] "Sat May 21 00:17:18 2022"
+[dumpfile_size] 1124017
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/iobus_top_tb.gtkw"
+[timestart] 99962300
+[size] 1920 1160
+[pos] -1 -1
+*-16.822840 100470000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] iobus_top_tb.
+[sst_width] 319
+[signals_width] 276
+[sst_expanded] 1
+[sst_vpaned_height] 322
+@28
+iobus_top_tb.io.rst
+@29
+iobus_top_tb.io.clk
+@22
+iobus_top_tb.io.io_addr[31:0]
+iobus_top_tb.io.io_byte_en[3:0]
+@28
+iobus_top_tb.io.io_addr_strobe
+iobus_top_tb.io.io_write_strobe
+iobus_top_tb.io.io_read_strobe
+@22
+iobus_top_tb.io.io_write_data[31:0]
+iobus_top_tb.io.io_read_data[31:0]
+@28
+iobus_top_tb.io.io_ready
+@22
+iobus_top_tb.io.tmp[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

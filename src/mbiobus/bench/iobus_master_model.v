@@ -57,7 +57,6 @@ module iobus_master_model(
             while (~io_ready) @(posedge clk);
 
             // get read data
-            #1;
             data = io_read_data;
         end
     endtask

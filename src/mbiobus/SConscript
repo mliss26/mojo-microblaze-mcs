@@ -7,6 +7,9 @@
 Import('env')
 env = env.Clone()
 
+script_dir = Dir('.').srcnode().abspath
+env.Append(VINCLUDES = '-I'+script_dir+'/../memory/sdram')
+
 env.IVerilogTestBench('iobus_address_compare_tb',
         [ 'bench/iobus_address_compare_tb.v', 'iobus_address_compare.v'])
 
@@ -15,3 +18,25 @@ env.IVerilogTestBench('iobus_default_response_tb',
 
 env.IVerilogTestBench('iobus_output_mux_tb',
         [ 'bench/iobus_output_mux_tb.v', 'iobus_output_mux.v'])
+
+env.IVerilogTestBench('iobus_top_tb', [
+        'bench/iobus_top_tb.v',
+        'bench/iobus_master_model.v',
+        'iobus_address_compare.v',
+        'iobus_default_response.v',
+        'iobus_output_mux.v',
+        'iobus_top.v',
+        '../memory/sdram/bench/mt48lc32m8a2.v',
+        '../memory/sdram/sdram_iom.v',
+        '../memory/sdram/sdram.v',
+        '../peripherals/gcnt/gcnt_iom.v',
+        '../peripherals/pdm/pdm_iom.v',
+        '../peripherals/pdm/pdm.v',
+        '../peripherals/prng/prng_iom.v',
+        '../peripherals/prng/prng.v',
+        '../util/async_handshake.v',
+        '../util/counter.v',
+        '$ISE_PATH/verilog/src/glbl.v',
+        '$ISE_PATH/verilog/src/unisims/IODELAY2.v',
+        '$ISE_PATH/verilog/src/unisims/ODDR2.v',
+])
