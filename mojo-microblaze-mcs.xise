@@ -17,7 +17,7 @@
   <files>
     <file xil_pn:name="src/mb_soc_top.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="17"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="18"/>
     </file>
     <file xil_pn:name="src/util/async_handshake.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
@@ -151,7 +151,7 @@
     </file>
     <file xil_pn:name="src/mbiobus/iobus_top.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="29"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="14"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
     </file>
     <file xil_pn:name="src/mbiobus/bench/iobus_address_compare_tb.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="30"/>
@@ -194,11 +194,15 @@
     </file>
     <file xil_pn:name="ipcore_dir/mbsoc_clk_gen.xco" xil_pn:type="FILE_COREGEN">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="41"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="17"/>
     </file>
     <file xil_pn:name="ipcore_dir/microblaze_mcs_v1_4.xco" xil_pn:type="FILE_COREGEN">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="46"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="15"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="16"/>
+    </file>
+    <file xil_pn:name="src/util/debounce.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="109"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="14"/>
     </file>
     <file xil_pn:name="ipcore_dir/mbsoc_clk_gen.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -214,6 +218,8 @@
     <property xil_pn:name="Implementation Top" xil_pn:value="Module|mb_soc_top" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top File" xil_pn:value="../src/mb_soc_top.v" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/mb_soc_top" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Last Selected UCF File" xil_pn:value="/workspace/github/mojo-microblaze-mcs/src/constraints/mojo.ucf" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Other Bitgen Command Line Options spartan6" xil_pn:value="-bd &quot;../ipcore_dir/microblaze_mcs_v1_4/microblaze-fw.elf&quot; tag microblaze_mcs_v1_4" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Other Ngdbuild Command Line Options" xil_pn:value="-bm &quot;../ipcore_dir/microblaze_mcs_v1_4.bmm&quot;" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Package" xil_pn:value="tqg144" xil_pn:valueState="default"/>
     <property xil_pn:name="Preferred Language" xil_pn:value="Verilog" xil_pn:valueState="default"/>

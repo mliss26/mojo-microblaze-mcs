@@ -18,6 +18,7 @@ ipcore_dir/**.xdc
 ipcore_dir/**.ucf
 ipcore_dir/**.ncf
 ipcore_dir/**.sym
+ipcore_dir/**.mem
 ipcore_dir/microblaze_mcs_v1_4/
 ipcore_dir/mbsoc_clk_gen/
 ipcore_dir/tmp/

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sat May 21 02:16:13 2022
+# Date: Sat May 21 16:13:16 2022
 #
 ##############################################################
 #
@@ -42,14 +42,14 @@ SELECT MicroBlaze_MCS xilinx.com:ip:microblaze_mcs:1.4
 CSET component_name=microblaze_mcs_v1_4
 CSET debug_enabled=true
 CSET fit1_interrupt=true
-CSET fit1_no_clocks=50000
+CSET fit1_no_clocks=100000
 CSET fit2_interrupt=false
 CSET fit2_no_clocks=6216
 CSET fit3_interrupt=false
 CSET fit3_no_clocks=6216
 CSET fit4_interrupt=false
 CSET fit4_no_clocks=6216
-CSET freq=50
+CSET freq=100
 CSET gpi1_interrupt=Both_Edges
 CSET gpi1_size=32
 CSET gpi2_interrupt=None
@@ -123,4 +123,4 @@ CSET use_uart_tx=true
 MISC pkg_timestamp=2012-11-21T08:11:43Z
 # END Extra information
 GENERATE
-# CRC: 7832845e
+# CRC: 752f766e

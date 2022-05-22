@@ -64,11 +64,12 @@ module mb_soc_top#(
     wire [IRQ_COUNT-1:0] irq;
 
     // clock and reset handling
-    wire lock, cpu_clk, mc_clk;
+    wire rst, lock, xo_clk, cpu_clk, mc_clk;
 
     mbsoc_clk_gen cc (
         .lock(lock),
         .clk_in(clk),
+        .xo_clk(xo_clk),
         .cpu_clk(cpu_clk),
         .sdram_clk(mc_clk)
     );
@@ -77,20 +78,30 @@ module mb_soc_top#(
     assign mc_clk = clk;
     */
 
+    debounce#(
+        .CTR_BITS(20)
+    ) rst_debounce (
+        .clk(xo_clk),
+        .btn(~rst_n),
+        .out(rst)
+    );
+
     // make reset active high and synchronize to clocks
-    wire rst, cpu_rst, mc_rst;
+    wire cpu_rst, mc_rst;
 
-    assign rst = ~rst_n | ~lock;
-
-    reset_synchronizer#(.DELAY(8)) cpu_rst_sync (
+    reset_synchronizer#(
+        .DELAY(4)
+    ) cpu_rst_sync (
         .clk(cpu_clk),
         .rst_in(rst),
         .rst_out(cpu_rst)
     );
 
-    reset_synchronizer#(.DELAY(8)) mc_rst_sync (
+    reset_synchronizer#(
+        .DELAY(4)
+    ) mc_rst_sync (
         .clk(mc_clk),
-        .rst_in(rst),
+        .rst_in(cpu_rst),
         .rst_out(mc_rst)
     );
 

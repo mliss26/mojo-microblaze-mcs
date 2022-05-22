@@ -1,0 +1,75 @@
+#
+# TOP testbench
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+script_dir = Dir('.').srcnode().abspath
+
+env.Append(VINCLUDES = '-I'+script_dir+'/memory/sdram')
+
+env.IVerilogTestBench('mb_soc_top_tb', [
+        'mb_soc_top_tb.v',
+        'mb_soc_top.v',
+        'mbiobus/iobus_address_compare.v',
+        'mbiobus/iobus_default_response.v',
+        'mbiobus/iobus_output_mux.v',
+        'mbiobus/iobus_top.v',
+        'memory/sdram/bench/mt48lc32m8a2.v',
+        'memory/sdram/sdram_iom.v',
+        'memory/sdram/sdram.v',
+        'peripherals/gcnt/gcnt_iom.v',
+        'peripherals/pdm/pdm_iom.v',
+        'peripherals/pdm/pdm.v',
+        'peripherals/prng/prng_iom.v',
+        'peripherals/prng/prng.v',
+        'util/async_handshake.v',
+        'util/btn_bounce.v',
+        'util/counter.v',
+        'util/debounce.v',
+        'util/reset_synchronizer.v',
+        script_dir+'/../ipcore_dir/mbsoc_clk_gen.v',
+        script_dir+'/../ipcore_dir/microblaze_mcs_v1_4.v',
+        '$ISE_PATH/verilog/src/unisims/IODELAY2.v',
+        '$ISE_PATH/verilog/src/unisims/ODDR2.v',
+        '$ISE_PATH/verilog/src/unisims/BSCAN_SPARTAN6.v',
+        '$ISE_PATH/verilog/src/unisims/BUFG.v',
+        '$ISE_PATH/verilog/src/unisims/FD.v',
+        '$ISE_PATH/verilog/src/unisims/FDC.v',
+        '$ISE_PATH/verilog/src/unisims/FDCE.v',
+        '$ISE_PATH/verilog/src/unisims/FDC_1.v',
+        '$ISE_PATH/verilog/src/unisims/FDE.v',
+        '$ISE_PATH/verilog/src/unisims/FDE_1.v',
+        '$ISE_PATH/verilog/src/unisims/FDP.v',
+        '$ISE_PATH/verilog/src/unisims/FDR.v',
+        '$ISE_PATH/verilog/src/unisims/FDRE.v',
+        '$ISE_PATH/verilog/src/unisims/FDRE_1.v',
+        '$ISE_PATH/verilog/src/unisims/FDS.v',
+        '$ISE_PATH/verilog/src/unisims/FDSE.v',
+        '$ISE_PATH/verilog/src/unisims/GND.v',
+        '$ISE_PATH/verilog/src/unisims/IBUFG.v',
+        '$ISE_PATH/verilog/src/unisims/INV.v',
+        '$ISE_PATH/verilog/src/unisims/LUT1.v',
+        '$ISE_PATH/verilog/src/unisims/LUT2.v',
+        '$ISE_PATH/verilog/src/unisims/LUT3.v',
+        '$ISE_PATH/verilog/src/unisims/LUT4.v',
+        '$ISE_PATH/verilog/src/unisims/LUT5.v',
+        '$ISE_PATH/verilog/src/unisims/LUT6.v',
+        '$ISE_PATH/verilog/src/unisims/LUT6_2.v',
+        '$ISE_PATH/verilog/src/unisims/MULT_AND.v',
+        '$ISE_PATH/verilog/src/unisims/MUXCY.v',
+        '$ISE_PATH/verilog/src/unisims/MUXCY_L.v',
+        '$ISE_PATH/verilog/src/unisims/MUXF5.v',
+        '$ISE_PATH/verilog/src/unisims/MUXF6.v',
+        '$ISE_PATH/verilog/src/unisims/MUXF7.v',
+        '$ISE_PATH/verilog/src/unisims/PLL_BASE.v',
+        '$ISE_PATH/verilog/src/unisims/RAM32X1D.v',
+        '$ISE_PATH/verilog/src/unisims/RAMB16BWER.v',
+        '$ISE_PATH/verilog/src/unisims/SRL16E.v',
+        '$ISE_PATH/verilog/src/unisims/SRLC16E.v',
+        '$ISE_PATH/verilog/src/unisims/VCC.v',
+        '$ISE_PATH/verilog/src/unisims/XORCY.v',
+        '$ISE_PATH/verilog/src/unisims/PLL_ADV.v',
+])

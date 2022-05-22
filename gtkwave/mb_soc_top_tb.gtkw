@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Sat May 21 18:27:02 2022
+[*]
+[dumpfile] "/workspace/github/mojo-microblaze-mcs/testbench/src/mb_soc_top_tb.vcd"
+[dumpfile_mtime] "Sat May 21 18:27:02 2022"
+[dumpfile_size] 16531456
+[savefile] "/workspace/github/mojo-microblaze-mcs/gtkwave/mb_soc_top_tb.gtkw"
+[timestart] 0
+[size] 1914 1116
+[pos] 0 657
+*-27.050003 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] mb_soc_top_tb.
+[sst_width] 319
+[signals_width] 171
+[sst_expanded] 1
+[sst_vpaned_height] 307
+@28
+mb_soc_top_tb.rst_n
+mb_soc_top_tb.clk
+mb_soc_top_tb.uart0_tx
+[color] 5
+mb_soc_top_tb.DUT.rst
+[color] 5
+mb_soc_top_tb.DUT.lock
+[color] 3
+mb_soc_top_tb.DUT.cpu_clk
+[color] 3
+mb_soc_top_tb.DUT.cpu_rst
+mb_soc_top_tb.DUT.mc_clk
+mb_soc_top_tb.DUT.mc_rst
+mb_soc_top_tb.sdram_clk
+mb_soc_top_tb.sdram_cle
+@c00022
+#{sdram_cmd} mb_soc_top_tb.sdram_cs mb_soc_top_tb.sdram_ras mb_soc_top_tb.sdram_cas mb_soc_top_tb.sdram_we
+@28
+mb_soc_top_tb.sdram_we
+mb_soc_top_tb.sdram_cas
+mb_soc_top_tb.sdram_ras
+mb_soc_top_tb.sdram_cs
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
