@@ -32,7 +32,9 @@
 
 
 module sdram#(
-        parameter CAS_LATENCY = 3'b011
+        parameter CAS_LATENCY = 3'b011,
+        parameter REF_COUNTER_BITS = 11,
+        parameter REF_COUNT = 1000
         ) (
         input clk,
         input rst,
@@ -178,7 +180,7 @@ module sdram#(
     reg [15:0] delay_ctr_d, delay_ctr_q;
     reg [1:0] byte_ctr_d, byte_ctr_q;
 
-    reg [10:0] refresh_ctr_d, refresh_ctr_q;
+    reg [REF_COUNTER_BITS-1:0] refresh_ctr_d, refresh_ctr_q;
     reg refresh_flag_d, refresh_flag_q;
 
     reg ready_d, ready_q;
@@ -224,8 +226,8 @@ module sdram#(
         // This conter ensures that the data remains intact.
         refresh_flag_d = refresh_flag_q;
         refresh_ctr_d = refresh_ctr_q + 1'b1;
-        if (refresh_ctr_q > 11'd750) begin
-            refresh_ctr_d = 11'd0;
+        if (refresh_ctr_q > REF_COUNT) begin
+            refresh_ctr_d = {REF_COUNTER_BITS{1'b0}};
             refresh_flag_d = 1'b1;
         end
 
@@ -297,7 +299,7 @@ module sdram#(
                 delay_ctr_d = 16'd2;
                 next_state_d = IDLE;
                 refresh_flag_d = 1'b0;
-                refresh_ctr_d = 11'b1;
+                refresh_ctr_d = {REF_COUNTER_BITS{1'b1}};
                 ready_d = 1'b1;
             end
 
