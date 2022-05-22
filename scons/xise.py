@@ -54,6 +54,12 @@ class XiseProject(object):
             if self.get_element_attr(prop, 'name') == 'Working Directory':
                 return self.get_element_attr(prop, 'value')
 
+    def get_elf(self):
+        for prop in self.root.find(self.ns('properties')):
+            value = self.get_element_attr(prop, 'value')
+            if 'elf' in value:
+                return value.split('"')[1]
+
 
 def xise_project(env, project_file):
     proj = XiseProject(project_file)
@@ -62,6 +68,12 @@ def xise_project(env, project_file):
 
     env.Append(TOP_MODULE = top)
     env.Append(BITSTREAM = '{}/{}.bit'.format(work, top))
+    env.Append(MB_ELF = '{}/{}'.format(work, proj.get_elf()))
+
+    if GetOption('verbose'):
+        print('TOP_MODULE: {}'.format(env['TOP_MODULE']))
+        print('BITSTREAM:  {}'.format(env['BITSTREAM']))
+        print('MB_ELF:     {}'.format(env['MB_ELF']))
 
     sources = proj.get_file_list()
     sources.append(project_file)
@@ -86,7 +98,11 @@ def xise_project(env, project_file):
     if os.path.exists(tcl):
         bitstream = env.Command('$BITSTREAM', sources,
                 'xtclsh {} run_process'.format(tcl))
+
         env.Clean(bitstream, [ work ])
+        if env['MB_ELF']:
+            env.Depends(bitstream, '$MB_ELF')
+
         return bitstream
 
 
@@ -114,8 +130,9 @@ def generate(env):
         for i in range(3):
             ise = os.path.dirname(ise)
         env.Append(ISE_PATH = ise)
-        if GetOption('verbose'):
-            print('ISE_PATH: {}'.format(env['ISE_PATH']))
+
+    if GetOption('verbose'):
+        print('ISE_PATH:   {}'.format(env['ISE_PATH']))
 
     # core generator support TODO autodetect coregen project file
     # launch the gui

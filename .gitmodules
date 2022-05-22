@@ -1,0 +1,3 @@
+[submodule "microblaze-fw"]
+	path = microblaze-fw
+	url = git@github.com:mliss26/microblaze-fw.git
