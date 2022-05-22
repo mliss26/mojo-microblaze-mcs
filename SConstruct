@@ -23,6 +23,8 @@ subdirs = [
     'src/peripherals/pdm',
     'src/peripherals/prng',
     'src/util',
+# takes ~6hrs to run top simulation - disable by default
+# TODO add option
 #    'src',
 ]
 for subdir in subdirs:

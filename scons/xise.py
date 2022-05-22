@@ -66,13 +66,20 @@ def xise_project(env, project_file):
     sources = proj.get_file_list()
     sources.append(project_file)
 
+    # setup new env with time-based dependency decider for cores
+    #
+    # xilinx tools update the timestamp in project files automatically even
+    # when the output files are not changed, this prevents unnecessary rebuilding
+    env_time = env.Clone()
+    env_time.Decider('timestamp-newer')
+
     # add rules to regenerate cores
     for src in sources:
         if '.xco' in src:
             target = src.split('.')[0] + '.v'
-            c = env.XIPCore(target, src)
-            env.Depends('$BITSTREAM', c)
-            env.NoClean(c)
+            c = env_time.XIPCore(target, src)
+            env_time.Depends('$BITSTREAM', c)
+            env_time.NoClean(c)
 
     # add rule to build project via tcl script, if present
     tcl = project_file.split('.')[0] + '.tcl'
@@ -116,7 +123,11 @@ def generate(env):
 
     # add builder to regenerate cores
     env.Append(BUILDERS = {
-        'XIPCore': Builder(action='coregen -p ipcore_dir/coregen.cgp -b $SOURCE')
+        'XIPCore': Builder( action = [
+                'rm -f $TARGET', # ensure target is regenerated for dep tracking
+                'coregen -p ipcore_dir/coregen.cgp -b $SOURCE',
+                'touch $TARGET'
+        ])
     })
 
     # add ISE project method
