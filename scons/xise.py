@@ -66,6 +66,14 @@ def xise_project(env, project_file):
     sources = proj.get_file_list()
     sources.append(project_file)
 
+    # add rules to regenerate cores
+    for src in sources:
+        if '.xco' in src:
+            target = src.split('.')[0] + '.v'
+            c = env.XIPCore(target, src)
+            env.Depends('$BITSTREAM', c)
+            env.NoClean(c)
+
     # add rule to build project via tcl script, if present
     tcl = project_file.split('.')[0] + '.tcl'
     if os.path.exists(tcl):
@@ -102,8 +110,14 @@ def generate(env):
         if GetOption('verbose'):
             print('ISE_PATH: {}'.format(env['ISE_PATH']))
 
-    # core generator support
+    # core generator support TODO autodetect coregen project file
+    # launch the gui
     env.PhonyTarget(coregen = 'coregen -p ipcore_dir/coregen.cgp')
+
+    # add builder to regenerate cores
+    env.Append(BUILDERS = {
+        'XIPCore': Builder(action='coregen -p ipcore_dir/coregen.cgp -b $SOURCE')
+    })
 
     # add ISE project method
     env.AddMethod(xise_project, 'XiseProject')
