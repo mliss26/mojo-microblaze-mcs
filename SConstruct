@@ -20,6 +20,7 @@ subdirs = [
     'src/mbiobus',
     'src/memory/sdram',
     'src/peripherals/gcnt',
+    'src/peripherals/i2cm',
     'src/peripherals/pdm',
     'src/peripherals/prng',
     'src/util',
@@ -29,6 +30,7 @@ subdirs = [
 ]
 for subdir in subdirs:
     env.SConscript(dirs=subdir, variant_dir='testbench/'+subdir, duplicate=0)
+env.VariantDir('testbench/src/opencores/i2c/rtl/verilog', 'src/opencores/i2c/rtl/verilog', duplicate=0)
 
 # setup env for flashing mojo
 env.Append(MOJO_PORT = '/dev/ttyACM1')

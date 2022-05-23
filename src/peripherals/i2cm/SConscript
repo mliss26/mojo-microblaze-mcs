@@ -1,0 +1,20 @@
+#
+# OpenCores I2C Master IO Module
+#
+# Copyright (c) 2022 Matt Liss
+# BSD-3-Clause
+#
+Import('env')
+env = env.Clone()
+script_dir = Dir('.').srcnode().abspath
+
+env.Append(VINCLUDES = '-I'+script_dir+'/../../opencores/i2c/rtl/verilog')
+
+env.IVerilogTestBench('i2cm_iom_tb', [
+        'bench/i2cm_iom_tb.v',
+        'i2cm_iom.v',
+        '../../mbiobus/bench/iobus_master_model.v',
+        '../../opencores/i2c/rtl/verilog/i2c_master_bit_ctrl.v',
+        '../../opencores/i2c/rtl/verilog/i2c_master_byte_ctrl.v',
+        '../../opencores/i2c/rtl/verilog/i2c_master_top.v',
+])

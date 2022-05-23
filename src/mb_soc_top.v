@@ -31,11 +31,14 @@ module mb_soc_top#(
     output avr_rx, // AVR Rx => FPGA Tx
     input avr_rx_busy, // AVR Rx buffer full
 
-
     output uart0_tx, // MicroBlaze TX
     input  uart0_rx, // MicroBlaze RX
 
     output [PDM_COUNT-1:0]pdm,
+
+    // I2C connections
+    inout i2cm_scl,
+    inout i2cm_sda,
 
     // SDRAM connections
     output sdram_clk,
@@ -140,7 +143,11 @@ module mb_soc_top#(
         .irq(irq),
 
         // dedicated PDM outputs
-        .pdm(pdm)
+        .pdm(pdm),
+
+        // I2C master signals
+        .sda(i2cm_sda),
+        .scl(i2cm_scl)
     );
 
     // cpu/mem subsystem

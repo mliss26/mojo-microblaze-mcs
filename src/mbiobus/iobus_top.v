@@ -55,13 +55,17 @@ module iobus_top#(
     output [IRQ_COUNT-1:0] irq,
 
     // other core signals routed to top
-    output [PDM_COUNT-1:0] pdm
+    output [PDM_COUNT-1:0] pdm,
+
+    // I2C signals
+    inout sda,
+    inout scl
     );
 
-    localparam CORE_COUNT = 4;
+    localparam CORE_COUNT = 5;
 
     // tie off unused irq lines
-    assign irq[IRQ_COUNT-1:0] = {IRQ_COUNT{1'b0}};
+    assign irq[IRQ_COUNT-1:1] = {(IRQ_COUNT-1){1'b0}};
 
     // one additional set of ios for default responder
     wire [CORE_COUNT-1:0] core_addr_strobe;
@@ -143,6 +147,13 @@ module iobus_top#(
 
     prng_iom prng_module (
         `IOMUX_CONNECT(2)
+    );
+
+    i2cm_iom i2cm_module (
+        `IOMUX_CONNECT(3),
+        .irq(irq[0]),
+        .scl(scl),
+        .sda(sda)
     );
 
 endmodule

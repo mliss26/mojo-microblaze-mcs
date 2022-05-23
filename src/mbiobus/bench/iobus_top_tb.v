@@ -13,7 +13,7 @@ module iobus_top_tb();
     localparam BASE_ADDRESS = 32'hc0000000;
     localparam ADDRESS_STRIDE = 32'h1000;
     localparam PDM_COUNT = 4;
-    localparam CORE_COUNT = 4;
+    localparam CORE_COUNT = 5;
 
     localparam SDRAM_BASE = 32'hE0000000;
     localparam PRNG_BASE  = 32'hC0002000;
