@@ -2,6 +2,7 @@
 **.vvp
 **.vcd
 **.log
+**/.svn
 env.sh
 ipcore_dir/**.elf
 ipcore_dir/**.tcl
