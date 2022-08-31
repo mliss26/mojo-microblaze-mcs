@@ -26,8 +26,8 @@ module pdm#(parameter DUTY_BITS = 8) (
     // combinational feedback circuit
     always @(accumulator_q, duty, en) begin
         if (en) begin
-            if (accumulator_q >= {DUTY_BITS{1'b1}}) begin
-                accumulator_d = accumulator_q - {DUTY_BITS{1'b1}} + duty;
+            if (accumulator_q > {DUTY_BITS{1'b1}}) begin
+                accumulator_d = accumulator_q - {DUTY_BITS{1'b1}} - 1 + duty;
                 pdm_d = 1'b1;
             end else begin
                 accumulator_d = accumulator_q + duty;

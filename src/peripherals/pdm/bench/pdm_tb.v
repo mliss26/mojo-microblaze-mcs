@@ -49,12 +49,16 @@ module pdm_tb();
         repeat(32) @(posedge clk);
 
         en = 1'b1;
+        duty = 8'd0;
         repeat(300) @(posedge clk);
 
         duty = 8'd128;
         repeat(300) @(posedge clk);
 
         duty = 8'd192;
+        repeat(300) @(posedge clk);
+
+        duty = 8'd255;
         repeat(300) @(posedge clk);
 
         duty = 8'd40;
